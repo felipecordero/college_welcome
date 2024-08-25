@@ -12,11 +12,11 @@ df.ffill(inplace=True)
 
 names = df.iloc[:, 2:].stack().unique().tolist()
 
-user = st.sidebar.selectbox(options = names, label = "Select User")
+user = st.selectbox(options = names, label = "Select User")
 
 days = df.columns[2:]
 
-day = st.sidebar.selectbox(options = days, label = "Select Day")
+day = st.selectbox(options = days, label = "Select Day")
 
 st.dataframe(df[["Horarie", "Position", day]][df[day] == user], hide_index=True, width=600,)
 
